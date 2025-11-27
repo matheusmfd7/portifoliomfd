@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Matheus Duraes - Portfólio</title>
+
+  <style>
+    :root{
+      --bg: #0f1724;
+      --card: rgba(0,0,0,0.55);
+      --muted: #c7cbd4;
+      --accent: #4f46e5;
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    body{
+      font-family: Inter, Arial;
+      background: var(--bg);
+      color:white;
+      min-height:100vh;
+      padding:32px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .container{
+      width:100%;
+      max-width:1000px;
+      background: rgba(0,0,0,0.45);
+      backdrop-filter: blur(10px);
+      border-radius:20px;
+      padding:28px;
+      display:grid;
+      grid-template-columns: 320px 1fr;
+      gap:24px;
+      box-shadow:0 0 40px rgba(0,0,0,0.6);
+    }
+
+    .sidebar{
+      background:var(--card);
+      padding:20px;
+      border-radius:16px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:16px;
+    }
+
+    .logo{
+      width:180px;
+      height:180px;
+      border-radius:14px;
+      overflow:hidden;
+      border:2px solid rgba(255,255,255,0.2);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .logo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    h1{
+      font-size:22px;
+    }
+
+    .role{
+      color:var(--muted);
+      margin-top:-4px;
+      margin-bottom:10px;
+    }
+
+    .socials{
+      display:flex;
+      gap:12px;
+      margin-top:10px;
+    }
+
+    .social-btn{
+      padding:10px 14px;
+      border-radius:8px;
+      background:rgba(255,255,255,0.15);
+      border:1px solid rgba(255,255,255,0.2);
+      color:white;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.2s;
+    }
+
+    .social-btn:hover{
+      background:rgba(255,255,255,0.25);
+    }
+
+    .main{
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+    }
+
+    .card{
+      background:rgba(0,0,0,0.45);
+      padding:18px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,0.1);
+    }
+
+    .section-title h2{
+      font-size:18px;
+      margin-bottom:6px;
+    }
+
+    .skills, .timeline{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .skill{
+      padding:8px 12px;
+      background:rgba(79,70,229,0.4);
+      border-radius:8px;
+      font-weight:600;
+    }
+
+    @media(max-width:900px){
+      .container{
+        grid-template-columns:1fr;
+      }
+      .logo{
+        width:140px;
+        height:140px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container" id="profile">
+
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="MFD logo.png" alt="Logo MFD">
+      </div>
+
+      <h1 id="name">Matheus Duraes</h1>
+      <div class="role">Estudante de Ciências da Computação</div>
+
+      <p style="text-align:center;color:#e0e0e0;font-size:14px">
+        Formação em <b>Assistente de Programação Web</b> + cursos de <b>JavaScript</b> e <b>Python</b>.<br>
+        Buscando oportunidade na área de desenvolvimento.
+      </p>
+
+      <div class="socials">
+        <button class="social-btn" onclick="window.open('https://github.com/matheusmfd7')">GitHub</button>
+
+      
+        <button class="social-btn" onclick="window.open('https://www.linkedin.com/in/matheus-ferreira-durães-975b46314')">LinkedIn</button>
+      </div>
+    </aside>
+
+    <main class="main">
+
+      <section class="card">
+        <div class="section-title"><h2>Sobre mim</h2></div>
+        <p>
+          Sou estudante de Ciências da Computação e formado em Aprendizagem Industrial — Assistente de Programação Web.
+          Tenho especialização complementar em JavaScript e Python, criando interfaces e soluções funcionais.
+          Busco minha primeira oportunidade como desenvolvedor web.
+        </p>
+      </section>
+
+      <section class="card">
+        <div class="section-title"><h2>Habilidades</h2></div>
+        <div class="skills">
+          <div class="skill">JavaScript</div>
+          <div class="skill">Python</div>
+          <div class="skill">HTML</div>
+          <div class="skill">CSS</div>
+          <div class="skill">PHP</div>
+          <div class="skill">MYSQL</div>
+          <div class="skill">FRONT-END</div>
+          <div class="skill">BACK-END</div>
+          <div class="skill">Git</div>
+          <div class="skill">GitHub</div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="section-title"><h2>Formação</h2></div>
+        <div class="timeline">
+          <div><b>Assistente de Programação Web</b> — SENAI. </div>
+          <div><b>Ciências da Computação</b> — Newton Paiva. </div>
+          <div>Cursos extra: Intensivão JavaScript — Hashtag Treinamentos • Jornada Python — Hashtag Treinamentos.</div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</body>
+</html>
