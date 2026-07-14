@@ -1,311 +1,1165 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Matheus Duraes - Portfólio</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
-    :root{
-      --bg: #0f1724;
-      --card: rgba(0,0,0,0.55);
-      --muted: #c7cbd4;
-      --accent: #4f46e5;
-    }
+<title>Matheus Duraes | Desenvolvedor Front-End</title>
 
-    *{
-      box-sizing:border-box;
-      margin:0;
-      padding:0;
-    }
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+<style>
+
+:root{
+    --bg:#0f1724;
+    --card:rgba(255,255,255,0.06);
+    --accent:#22c55e;
+    --text:#ffffff;
+    --muted:#a7b0be;
+    --border:rgba(255,255,255,0.12);
+}
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    font-family:"Inter",Arial,sans-serif;
+    background:
+    radial-gradient(circle at top,#16351f,#0f1724 45%);
+    color:var(--text);
+    min-height:100vh;
+    padding:30px;
+
+}
+
+
+.container{
+
+    max-width:1200px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:320px 1fr;
+    gap:25px;
+
+}
+
+
+/* SIDEBAR */
+
+.sidebar{
+
+    background:var(--card);
+    backdrop-filter:blur(15px);
+
+    border:1px solid var(--border);
+
+    border-radius:25px;
+
+    padding:30px;
+
+    text-align:center;
+
+    height:max-content;
+
+    position:sticky;
+    top:20px;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.4);
+
+}
+
+
+.logo{
+
+    width:190px;
+    height:190px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+    border:3px solid var(--accent);
+
+    box-shadow:
+    0 0 30px rgba(34,197,94,.4);
+
+}
+
+
+.logo img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+
+.sidebar h1{
+
+    margin-top:20px;
+
+    font-size:28px;
+
+}
+
+
+.role{
+
+    color:var(--accent);
+
+    font-weight:bold;
+
+    margin:10px 0;
+
+}
+
+
+.bio{
+
+    color:#ddd;
+
+    font-size:14px;
+
+    line-height:1.6;
+
+    margin-top:20px;
+
+}
+
+
+/* BOTÕES */
+
+
+.socials{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    margin-top:25px;
+
+}
+
+
+.social-btn{
+
+    text-decoration:none;
+
+    color:white;
+
+    padding:13px;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid var(--border);
+
+    transition:.3s;
+
+    font-weight:bold;
+
+}
+
+
+.social-btn:hover{
+
+    background:var(--accent);
+
+    color:#07120b;
+
+    transform:translateY(-3px);
+
+}
+
+
+/* CONTEÚDO */
+
+
+.main{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:22px;
+
+}
+
+
+.card{
+
+    background:var(--card);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:22px;
+
+    padding:25px;
+
+    border:1px solid var(--border);
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.25);
+
+}
+
+
+.card h2{
+
+    color:var(--accent);
+
+    margin-bottom:15px;
+
+    font-size:22px;
+
+}
+
+
+.card p{
+
+    color:#ddd;
+
+    line-height:1.7;
+
+}
+
+
+/* TECNOLOGIAS */
+
+
+.tech-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(90px,1fr));
+
+    gap:25px;
+
+    margin-top:20px;
+
+}
+
+
+.tech{
+
+    background:rgba(255,255,255,.05);
+
+    border-radius:18px;
+
+    padding:20px 10px;
+
+    text-align:center;
+
+    transition:.3s;
+
+    border:1px solid var(--border);
+
+}
+
+
+.tech i{
+
+    font-size:45px;
+
+    display:block;
+
+    margin-bottom:10px;
+
+}
+
+
+.tech span{
+
+    font-size:13px;
+
+}
+
+
+.tech:hover{
+
+    transform:
+    translateY(-8px)
+    scale(1.05);
+
+    border-color:var(--accent);
+
+    box-shadow:
+    0 0 25px rgba(34,197,94,.3);
+
+}
+
+
+
+/* FORMAÇÃO */
+
+
+.timeline{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+
+.timeline-item{
+
+    padding:18px;
+
+    background:rgba(255,255,255,.05);
+
+    border-left:4px solid var(--accent);
+
+    border-radius:12px;
+
+}
+
+
+
+/* PROJETOS */
+
+
+.projects{
+
+    display:grid;
+
+    gap:20px;
+
+}
+
+
+.project-card{
+
+    background:
+    rgba(255,255,255,.05);
+
+    border-radius:18px;
+
+    padding:20px;
+
+    border:1px solid var(--border);
+
+    transition:.3s;
+
+}
+
+
+.project-card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:var(--accent);
+
+}
+
+
+.project-card img{
+
+    width:100%;
+
+    max-width:500px;
+
+    display:block;
+
+    margin:20px auto;
+
+    border-radius:15px;
+
+}
+
+
+
+.project-card h3{
+
+    color:var(--accent);
+
+    margin-bottom:10px;
+
+}
+
+
+.project-card p{
+
+    font-size:14px;
+
+}
+
+
+.project-link{
+
+    display:inline-block;
+
+    margin-top:15px;
+
+    color:var(--accent);
+
+    font-weight:bold;
+
+    text-decoration:none;
+
+}
+
+
+.project-link:hover{
+
+    text-decoration:underline;
+
+}
+
+
+/* RESPONSIVO */
+
+
+@media(max-width:900px){
 
     body{
-      font-family: Inter, Arial, sans-serif;
-      background: var(--bg);
-      color:white;
-      min-height:100vh;
-      padding:32px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
+
+        padding:15px;
+
     }
+
 
     .container{
-      width:100%;
-      max-width:1000px;
-      background: rgba(0,0,0,0.45);
-      backdrop-filter: blur(10px);
-      border-radius:20px;
-      padding:28px;
-      display:grid;
-      grid-template-columns: 320px 1fr;
-      gap:24px;
-      box-shadow:0 0 40px rgba(0,0,0,0.6);
+
+        grid-template-columns:1fr;
+
     }
+
 
     .sidebar{
-      background:var(--card);
-      padding:20px;
-      border-radius:16px;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      gap:16px;
+
+        position:relative;
+
     }
+
 
     .logo{
-      width:180px;
-      height:180px;
-      border-radius:14px;
-      overflow:hidden;
-      border:2px solid rgba(255,255,255,0.2);
-      display:flex;
-      align-items:center;
-      justify-content:center;
+
+        width:150px;
+
+        height:150px;
+
     }
 
-    .logo img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
+}
 
-    h1{
-      font-size:22px;
-    }
 
-    .role{
-      color:var(--muted);
-      margin-top:-4px;
-      margin-bottom:10px;
-    }
+</style>
 
-    .socials{
-      display:flex;
-      gap:12px;
-      margin-top:10px;
-      flex-wrap:wrap;
-      justify-content:center;
-    }
-
-    .social-btn{
-      padding:10px 14px;
-      border-radius:8px;
-      background:rgba(255,255,255,0.15);
-      border:1px solid rgba(255,255,255,0.2);
-      color:white;
-      font-weight:600;
-      cursor:pointer;
-      transition:0.2s;
-    }
-
-    .social-btn:hover{
-      background:rgba(255,255,255,0.25);
-    }
-
-    .main{
-      display:flex;
-      flex-direction:column;
-      gap:20px;
-    }
-
-    .card{
-      background:rgba(0,0,0,0.45);
-      padding:18px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,0.1);
-    }
-
-    .section-title h2{
-      font-size:18px;
-      margin-bottom:6px;
-    }
-
-    .skills, .timeline{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-    }
-
-    .skill{
-      padding:8px 12px;
-      background:rgba(79,70,229,0.4);
-      border-radius:8px;
-      font-weight:600;
-    }
-
-    .projects{
-      display:flex;
-      flex-direction:column;
-      gap:16px;
-    }
-
-    .project-card{
-      background:rgba(79,70,229,0.15);
-      padding:14px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,0.2);
-      cursor:pointer;
-      transition:0.2s;
-    }
-
-    .project-card:hover{
-      background:rgba(79,70,229,0.25);
-    }
-
-    .project-description{
-      display:none;
-      margin-top:10px;
-      background:rgba(0,0,0,0.3);
-      padding:12px;
-      border-radius:10px;
-      font-size:14px;
-      line-height:1.5;
-    }
-
-    .project-card.active .project-description{
-      display:block;
-    }
-
-    @media(max-width:900px){
-      .container{
-        grid-template-columns:1fr;
-      }
-      .logo{
-        width:140px;
-        height:140px;
-      }
-    }
-  </style>
 </head>
 
 <body>
-  <div class="container" id="profile">
 
-    <aside class="sidebar">
-      <div class="logo">
-        <img src="matheus duraes.jpg" alt="Foto de Matheus Duraes" />
-      </div>
-
-      <h1 id="name">Matheus Duraes</h1>
-      <div class="role"> Programador e Desenvolvedor Web  Graduando em Ciências da Computação</div>
-
-      <p style="text-align:center;color:#e0e0e0;font-size:14px">
-        Graduando em <b>Ciência da Computação</b>, com formação como <b>Assistente de Programação Web</b>.<br>
-Em busca de oportunidade na área de desenvolvimento para aplicar conhecimentos e evoluir profissionalmente.
-      </p>
-
-      <div class="socials">
-        <button class="social-btn" onclick="window.open('https://github.com/matheusmfd7')">GitHub</button>
-        <button class="social-btn" onclick="window.open('https://www.linkedin.com/in/matheus-ferreira-durães-975b46314')">LinkedIn</button>
-      </div>
-    </aside>
-
-    <main class="main">
-
-      <section class="card">
-        <div class="section-title"><h2>Sobre mim</h2></div>
-        <p>
-          Me chamo Matheus Durães, tenho 22 anos e sou de Belo Horizonte – MG. Sou formado em Assistente de Programação e Desenvolvimento Web pelo SENAI CTTI e atualmente sou graduando em Ciência da Computação pela Newton Paiva | Wyden. Tenho interesse constante em tecnologia, desenvolvimento de sistemas e aprimoramento contínuo, buscando evoluir profissionalmente e aplicar meus conhecimentos de forma prática no mercado.
-        </p>
-      </section>
-
-      <section class="card">
-        <div class="section-title"><h2>Habilidades</h2></div>
-        <div class="skills">
-          <div class="skill">JavaScript</div>
-          <div class="skill">Python</div>
-          <div class="skill">HTML</div>
-          <div class="skill">CSS</div>
-          <div class="skill">PHP</div>
-          <div class="skill">MySQL</div>
-          <div class="skill">Front-End</div>
-          <div class="skill">Back-End</div>
-          <div class="skill">GitHub</div>
-        </div>
-      </section>
-
-      <section class="card">
-        <div class="section-title"><h2>Formação Acadêmica</h2></div>
-        <div class="timeline">
-          <div><b>Ensino Médio</b>, Escola Estadual Madre Carmelita. Início em Abril de 2021, concluído em Dezembro de 2023.</div>
-          <div><b>Assistente de Programação e Desenvolvimento Web</b>, SENAI CTTI. Início em Janeiro de 2025, concluído em Dezembro de 2025.</div>
-          <div><b>Ciências da Computação</b>, Newton Paiva Wyden. Início em Março de 2026, conclusão prevista para Dezembro de 2029.</div>
-        </div>
-      </section>
-
-      <section class="card">
-        <div class="section-title"><h2>Cursos Extras Curriculares</h2></div>
-        <div class="timeline">
-          <div><b>Empreendedorismo Digital </b> - Fevereiro de 2024 (Empresa de Informática e Informação do Município de Belo Horizonte)</div>
-          <div><b>EXCEL MASTER: Do Básico ao Avançado (4 Cursos em 1)</b> - Julho de 2024 (Udemy)</div>
-          <div><b>Jornada Python</b> - Setembro de 2025 (Hashtag Treinamentos)</div>
-          <div><b>Intensivão JavaScript</b> - Outubro de 2025 (Hashtag Treinamentos)</div>
-          <div><b>Aperfeiçoamento em CiberSegurança</b> - Novembro de 2025 (SENAI CTTI)</div>
-        </div>
-      </section>
-
-      <section class="card">
-        <div class="section-title"><h2>Projetos</h2></div>
-        <div class="projects">
-          <div class="project-card" onclick="this.classList.toggle('active')">
-            <b>O Caldeirão dos Sabores</b>
-            <div class="project-description">
-              <img src="Caldeirao dos Sabores.jpeg" alt="O Caldeirão dos Sabores" style="max-width: 80%; height: auto; display: block; margin: 15px auto;">
-              Desenvolvi uma experiência moderna, interativa e visualmente envolvente, aplicando boas práticas de front-end e foco total na experiência do usuário.<br><br>
-              <b>Tecnologias e recursos utilizados:</b><br>
-              • HTML, CSS e JavaScript na construção e interação do site<br>
-              • Google Fonts para tipografia temática<br>
-              • Canvas para edição e tratamento das imagens<br>
-              • remove.bg para remoção de fundo com precisão<br>
-              • ScrollRevealJS para animações suaves e dinâmicas em cada seção<br><br>
-              <a href="https://matheusmfd7.github.io/o-caldeirao-dos-sabores/" target="_blank" style="color:var(--accent); text-decoration:underline;">Acessar o site</a>
-            </div>
-          </div>
-
-          <div class="project-card" onclick="this.classList.toggle('active')">
-            <b>Lista de Tarefas</b>
-            <div class="project-description">
-              <img src="Lista de Tarefas.jpeg" alt="Lista de Tarefas" style="max-width: 80%; height: auto; display: block; margin: 15px auto;">
-              Projeto de Lista de Tarefas desenvolvido com HTML, CSS e JavaScript no Front-end, integrado a PHP e MySQL no Back-end para persistência de dados, permitindo criar, editar e remover tarefas.<br><br>
-              <a href="https://matheusmfd7.github.io/lista-de-tarefas/" target="_blank" style="color:var(--accent); text-decoration:underline;">Acessar o site</a>
-            </div>
-          </div>
-
-          <div class="project-card" onclick="this.classList.toggle('active')">
-            <b>Jogo da Velha</b>
-            <div class="project-description">
-              <img src="Jogo da Velha.jpeg" alt="Jogo da Velha" style="max-width: 80%; height: auto; display: block; margin: 15px auto;">
-              Jogo da Velha em Python, com interface simples e divertida. Inclui versões de Mickey e Pluto, personagens já em domínio público. O projeto combina lógica clássica com variações visuais, ideal para praticar programação usando Python, HTML e CSS.<br><br>
-              <a href="https://matheusmfd7.github.io/jogo-da-velha/" target="_blank" style="color:var(--accent); text-decoration:underline;">Acessar o site</a>
-            </div>
-          </div>
-
-          <div class="project-card" onclick="this.classList.toggle('active')">
-            <b>Super Mario Pulos</b>
-            <div class="project-description">
-              <img src="Super Mario Pulos.jpeg" alt="Super Mario Pulos" style="max-width: 80%; height: auto; display: block; margin: 15px auto;">
-              Super Mario Jump - Projeto de Jogo em JavaScript<br><br>
-              Super Mario Jump é um jogo de plataforma em HTML, CSS e JavaScript, inspirado no clássico Mario Bros. Controle o Mario para pular obstáculos (canos) e sobreviver o máximo possível. O jogo possui animações de pulo, obstáculos em movimento, cenário com céu e nuvens animadas, e detecção simples de colisão.<br><br>
-              <a href="https://matheusmfd7.github.io/supermariopulos/" target="_blank" style="color:var(--accent); text-decoration:underline;">Acessar o site</a>
-            </div>
-          </div>
-
-          <div class="project-card" onclick="this.classList.toggle('active')">
-            <b>Pac Man</b>
-            <div class="project-description">
-              <img src="pacman.png" alt="Pac Man" style="max-width: 80%; height: auto; display: block; margin: 15px auto;">
-              Pac Man Projeto em HTML e JavaScript<br><br>
-            Clone do clássico Pac-Man desenvolvido com HTML e JavaScript puro, utilizando HTML5 Canvas. O jogo possui movimentação fluida, fantasmas com comportamento dinâmico, detecção de colisões, sistema de pontuação e vidas, mapa em matriz, animações por sprites e música original do jogo em MP3, sincronizada com o início da partida.<br><br>
-              <a href="https://matheusmfd7.github.io/pacman/" target="_blank" style="color:var(--accent); text-decoration:underline;">Acessar o site</a>
-            </div>
-          </div>
+<div class="container">
 
 
-        </div>
-      </section>
+<aside class="sidebar">
 
-    </main>
-  </div>
+    <div class="logo">
+        <img src="matheus duraes.jpg" alt="Matheus Duraes">
+    </div>
+
+
+    <h1>Matheus Duraes</h1>
+
+    <div class="role">
+        Desenvolvedor Front-End
+    </div>
+
+
+    <p class="bio">
+
+        Estudante de Análise e Desenvolvimento de Sistemas
+        pela Newton Paiva | Wyden.
+
+        Formado em Assistente de Programação Web pelo
+        SENAI CTTI.
+
+        Buscando minha primeira oportunidade profissional
+        na área de tecnologia, com foco em desenvolvimento
+        Front-End.
+
+    </p>
+
+
+    <div class="socials">
+
+        <a class="social-btn"
+        href="https://github.com/matheusmfd7"
+        target="_blank">
+        GitHub
+        </a>
+
+
+        <a class="social-btn"
+        href="https://www.linkedin.com/in/matheus-ferreira-durães-975b46314"
+        target="_blank">
+        LinkedIn
+        </a>
+
+
+        <a class="social-btn"
+        href="curriculomatheus.pdf"
+        download>
+        Baixar Currículo PDF
+        </a>
+
+
+    </div>
+
+
+</aside>
+
+
+
+<main class="main">
+
+
+
+<section class="card">
+
+<h2>
+Sobre mim
+</h2>
+
+
+<p>
+
+Olá, sou Matheus Duraes, Desenvolvedor Front-End em formação, 
+com foco na criação de interfaces modernas, responsivas e intuitivas.
+
+Sou formado em Assistente de Programação Web pelo SENAI CTTI e 
+atualmente curso Análise e Desenvolvimento de Sistemas pela 
+Newton Paiva | Wyden.
+
+Possuo conhecimentos em HTML, CSS, JavaScript e React, aplicando 
+boas práticas de desenvolvimento, organização de código e 
+componentização de interfaces.
+
+Tenho interesse em tecnologia, inovação e aprendizado contínuo, 
+buscando minha primeira oportunidade profissional na área de 
+desenvolvimento para contribuir com projetos reais e evoluir 
+constantemente como desenvolvedor.
+
+</p>
+
+</section>
+
+
+
+
+
+<section class="card">
+
+
+<h2>
+Tecnologias
+</h2>
+
+
+<div class="tech-grid">
+
+
+<div class="tech">
+<i class="devicon-html5-plain colored"></i>
+<span>HTML</span>
+</div>
+
+
+<div class="tech">
+<i class="devicon-css3-plain colored"></i>
+<span>CSS</span>
+</div>
+
+
+<div class="tech">
+<i class="devicon-javascript-plain colored"></i>
+<span>JavaScript</span>
+</div>
+
+
+<div class="tech">
+<i class="devicon-react-original colored"></i>
+<span>React</span>
+</div>
+
+
+<div class="tech">
+<i class="devicon-bootstrap-plain colored"></i>
+<span>Bootstrap</span>
+</div>
+
+
+<div class="tech">
+<i class="devicon-nodejs-plain colored"></i>
+<span>Node.js</span>
+</div>
+
+
+<div class="tech">
+<i class="devicon-php-plain colored"></i>
+<span>PHP</span>
+</div>
+
+
+<div class="tech">
+<i class="devicon-python-plain colored"></i>
+<span>Python</span>
+</div>
+
+
+<div class="tech">
+<i class="devicon-mysql-plain colored"></i>
+<span>MySQL</span>
+</div>
+
+
+<div class="tech">
+<i class="devicon-git-plain colored"></i>
+<span>Git</span>
+</div>
+
+
+<div class="tech">
+<i class="devicon-github-original"></i>
+<span>GitHub</span>
+</div>
+
+
+<div class="tech">
+<i class="devicon-vitejs-plain colored"></i>
+<span>Vite</span>
+</div>
+
+
+<div class="tech">
+<i class="devicon-npm-original-wordmark colored"></i>
+<span>npm</span>
+</div>
+
+
+<div class="tech">
+<i class="devicon-json-plain colored"></i>
+<span>JSON</span>
+</div>
+
+
+<div class="tech">
+<i class="devicon-bash-plain colored"></i>
+<span>REST API</span>
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="card">
+
+
+<h2>
+Formação Acadêmica
+</h2>
+
+
+<div class="timeline">
+
+
+<div class="timeline-item">
+
+<b>
+Análise e Desenvolvimento de Sistemas
+</b>
+
+<br>
+
+Newton Paiva | Wyden
+
+<br>
+
+Março/2026 - Junho/2028
+
+</div>
+
+
+
+<div class="timeline-item">
+
+<b>
+Assistente de Programação Web
+</b>
+
+<br>
+
+SENAI CTTI
+
+<br>
+
+Janeiro/2025 - Dezembro/2025
+
+</div>
+
+
+
+
+<div class="timeline-item">
+
+<b>
+Ensino Médio
+</b>
+
+<br>
+
+Escola Estadual Madre Carmelita
+
+<br>
+
+2021 - 2023
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="card">
+
+
+<h2>
+Cursos Extras Curriculares
+</h2>
+
+
+<div class="timeline">
+
+
+<div class="timeline-item">
+
+<b>
+Programador Web - Tecnologias em Front-End
+</b>
+
+<br>
+
+IFMG - Maio/2026
+
+</div>
+
+
+
+<div class="timeline-item">
+
+<b>
+Next.js App Router e Testes
+</b>
+
+<br>
+
+Faculdade de Tecnologia Rocketseat - Julho de2026
+
+</div>
+
+
+
+<div class="timeline-item">
+
+<b>
+Aperfeiçoamento em Ciber Segurança
+</b>
+
+<br>
+
+SENAI CTTI - Novembro de 2025
+
+</div>
+
+
+
+<div class="timeline-item">
+
+<b>
+Intensivão JavaScript
+</b>
+
+<br>
+
+Hashtag Treinamentos - Outubro de 2025
+
+</div>
+
+
+
+<div class="timeline-item">
+
+<b>
+Jornada Python
+</b>
+
+<br>
+
+Hashtag Treinamentos - Setembro de 2025
+
+</div>
+
+
+
+<div class="timeline-item">
+
+<b>
+EXCEL MASTER - Do Básico ao Avançado
+</b>
+
+<br>
+
+Udemy - Julho de 2024
+
+</div>
+
+ <div class="timeline-item">
+
+<b>
+
+Empreendedorismo Digital
+</b>
+
+<br>
+
+Prodabel - Fevereiro de 2024
+
+</div>
+
+
+</section>
+
+
+<section class="card">
+
+<h2>
+Projetos
+</h2>
+
+
+<div class="projects">
+
+
+
+<div class="project-card">
+
+<h3>
+O Caldeirão dos Sabores
+</h3>
+
+
+<img src="Caldeirao dos Sabores.jpeg" 
+alt="O Caldeirão dos Sabores">
+
+
+<p>
+
+Projeto de desenvolvimento Front-End focado em uma experiência
+visual moderna para apresentação de receitas e conteúdos
+gastronômicos.
+
+Foi desenvolvido aplicando conceitos de responsividade,
+organização de layout e experiência do usuário.
+
+<br><br>
+
+<b>Tecnologias:</b>
+
+HTML, CSS, JavaScript, Google Fonts,
+Canvas e ScrollReveal.
+
+</p>
+
+
+<a class="project-link"
+href="https://matheusmfd7.github.io/o-caldeirao-dos-sabores/"
+target="_blank">
+
+Acessar projeto
+
+</a>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="project-card">
+
+<h3>
+Lista de Tarefas
+</h3>
+
+
+<img src="Lista de Tarefas.jpeg"
+alt="Lista de Tarefas">
+
+
+<p>
+
+Aplicação de gerenciamento de tarefas desenvolvida para
+praticar integração entre Front-End e Back-End.
+
+O sistema permite criação, organização e armazenamento
+de tarefas utilizando banco de dados.
+
+<br><br>
+
+<b>Tecnologias:</b>
+
+HTML, CSS, JavaScript, PHP e MySQL.
+
+</p>
+
+
+<a class="project-link"
+href="https://matheusmfd7.github.io/lista-de-tarefas/"
+target="_blank">
+
+Acessar projeto
+
+</a>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="project-card">
+
+<h3>
+Jogo da Velha
+</h3>
+
+
+<img src="Jogo da Velha.jpeg"
+alt="Jogo da Velha">
+
+
+<p>
+
+Projeto desenvolvido para aplicar lógica de programação,
+estrutura de decisões e interação com usuário.
+
+Uma versão personalizada do clássico jogo da velha,
+utilizando conceitos de programação e interface visual.
+
+<br><br>
+
+<b>Tecnologias:</b>
+
+Python, HTML e CSS.
+
+</p>
+
+
+<a class="project-link"
+href="https://matheusmfd7.github.io/jogo-da-velha/"
+target="_blank">
+
+Acessar projeto
+
+</a>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="project-card">
+
+<h3>
+Super Mario Pulos
+</h3>
+
+
+<img src="Super Mario Pulos.jpeg"
+alt="Super Mario Pulos">
+
+
+<p>
+
+Jogo desenvolvido utilizando JavaScript puro,
+com movimentação de personagem, animações,
+obstáculos e sistema de colisão.
+
+Projeto focado em lógica de programação,
+interatividade e manipulação do DOM.
+
+<br><br>
+
+<b>Tecnologias:</b>
+
+HTML, CSS e JavaScript.
+
+</p>
+
+
+<a class="project-link"
+href="https://matheusmfd7.github.io/supermariopulos/"
+target="_blank">
+
+Acessar projeto
+
+</a>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="project-card">
+
+<h3>
+Pac-Man
+</h3>
+
+
+<img src="pacman.png"
+alt="Pac-Man">
+
+
+<p>
+
+Recriação do clássico jogo Pac-Man utilizando
+HTML5 Canvas e JavaScript.
+
+O projeto possui movimentação, sistema de pontuação,
+vidas, colisões, mapa em matriz e animações.
+
+<br><br>
+
+<b>Tecnologias:</b>
+
+HTML5 Canvas, JavaScript e CSS.
+
+</p>
+
+
+<a class="project-link"
+href="https://matheusmfd7.github.io/pacman/"
+target="_blank">
+
+Acessar projeto
+
+</a>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="project-card">
+
+<h3>
+UaiCine
+</h3>
+
+
+<img src="UaiCine.jpeg"
+alt="UaiCine">
+
+
+<p>
+
+Aplicação web de catálogo de filmes desenvolvida
+com foco em experiência do usuário e consumo de dados.
+
+O projeto apresenta filmes, organização por componentes,
+interface responsiva e integração com API REST.
+
+Foi desenvolvido aplicando conceitos modernos de
+desenvolvimento Front-End.
+
+<br><br>
+
+<b>Tecnologias:</b>
+
+React, JavaScript, CSS, Vite,
+REST API e JSON.
+
+</p>
+
+
+<a class="project-link"
+href="https://matheusmfd7.github.io/uaicine/#/"
+target="_blank">
+
+Acessar projeto
+
+</a>
+
+
+</div>
+
+
+
+
+
+</div>
+
+</section>
+
+
+
+
+</main>
+
+</div>
+
+
 </body>
+
 </html>
